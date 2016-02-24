@@ -13,8 +13,6 @@ project     = ENV["#{env_prefix}_PROJECT"] || 'dev1.d8'
 
 Vagrant.configure(2) do |config|
 
-    config.ssh.private_key_path = "/Users/joepurcell/.ssh/id_rsa"
-
     config.hostmanager.enabled = true
     config.hostmanager.manage_host = true
 

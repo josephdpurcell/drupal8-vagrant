@@ -5,7 +5,7 @@
   tags: drush
 
 - name: Drush | Stat drush
-  stat: path=/home/vagrant/.composer/vendor/bin/drush
+  stat: path=/home/vagrant/.config/composer/vendor/bin/drush
   register: drush_binary
   tags: drush
 
@@ -21,8 +21,8 @@
 
 - name: Drush | Update .bashrc
   lineinfile: dest=/home/vagrant/.bashrc
-              regexp="export PATH=\"$HOME/.composer/vendor/bin:$PATH\""
-              line="export PATH=\"$HOME/.composer/vendor/bin:$PATH\""
+              regexp="export PATH=\"$HOME/.config/composer/vendor/bin:$PATH\""
+              line="export PATH=\"$HOME/.config/composer/vendor/bin:$PATH\""
               insertafter=EOF
               state=present
   tags: drush

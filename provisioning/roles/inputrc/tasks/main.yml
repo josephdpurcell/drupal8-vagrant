@@ -1,0 +1,5 @@
+---
+- name: Inputrc
+  sudo: yes
+  template: src=inputrc dest=/home/vagrant/.inputrc
+  tags: inputrc
