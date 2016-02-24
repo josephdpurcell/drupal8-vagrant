@@ -14,6 +14,7 @@ To get the vm up and running:
 1. vagrant ssh
 1. cd /var/www/dev1.d8.local
 1. ./provisioning/bin/install.sh
+1. Choose "N" for installing multiversiona nd workbench since it's hard coded to user josephdpurcell
 
 You can now visit [http://dev1.d8.local](http://dev1.d8.local).
 
@@ -36,7 +37,7 @@ To create multiple vms (e.g. a dev1.d8.local and a dev2.d8.local):
 1. vagrant ssh
 1. cd /var/www/dev1.d8.local
 1. ./provisioning/bin/install.sh
-1. Choose yes or no to install multiversion, and again for workbench moderation (default is yes).
+1. Choose "N" for installing multiversiona nd workbench since it's hard coded to user josephdpurcell
 
 You can now visit [http://dev2.d8.local](http://dev2.d8.local).
 
@@ -49,4 +50,10 @@ As such, this repo comes with a script that you can run every time you want to c
 1. vagrant ssh
 1. cd /var/www/dev1.d8.local
 1. ./provisioning/bin/install.sh
-1. Choose yes or no to install multiversion, and again for workbench moderation (default is yes).
+1. Choose "N" for installing multiversiona nd workbench since it's hard coded to user josephdpurcell
+
+## TODO
+
+1. Add script to upgrade Drupal core
+1. Integrate the composer drupal install to the ansible script (see provisioning/todo.sh)
+1. Make getting multiversion and workbench_moderation modules not dependent on josephdpurcell username
