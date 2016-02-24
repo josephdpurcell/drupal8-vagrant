@@ -36,5 +36,17 @@ To create multiple vms (e.g. a dev1.d8.local and a dev2.d8.local):
 1. vagrant ssh
 1. cd /var/www/dev1.d8.local
 1. ./provisioning/bin/install.sh
+1. Choose yes or no to install multiversion, and again for workbench moderation (default is yes).
 
 You can now visit [http://dev2.d8.local](http://dev2.d8.local).
+
+## Developing with Multiversion or Workbench Moderation
+
+Working with modules that do significant changes to database schema can make it challenging to enable, disable, or update without causing some form of errors related to data and state corruption.
+
+As such, this repo comes with a script that you can run every time you want to completely re-build Drupal. Essentially, it just does site install, enables the appropriate modules, and sets the admin pass.
+
+1. vagrant ssh
+1. cd /var/www/dev1.d8.local
+1. ./provisioning/bin/install.sh
+1. Choose yes or no to install multiversion, and again for workbench moderation (default is yes).
