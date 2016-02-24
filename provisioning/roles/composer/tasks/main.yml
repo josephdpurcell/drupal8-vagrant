@@ -1,0 +1,5 @@
+---
+- name: Composer | self-update
+  sudo: yes
+  shell: composer self-update
+  tags: composer

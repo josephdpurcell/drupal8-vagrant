@@ -1,0 +1,16 @@
+---
+- hosts: all
+  vars:
+    timezone: America/Chicago
+    mysql_root_pass: pass
+    system_packages: []
+  roles:
+    - { role: common }
+    - { role: git }
+    - { role: composer }
+    - { role: apache }
+    - { role: php }
+    - { role: phpmyadmin }
+    - { role: drush }
+    - { role: drupal-console }
+    - { role: drupal }
