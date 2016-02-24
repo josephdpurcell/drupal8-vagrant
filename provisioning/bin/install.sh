@@ -9,6 +9,6 @@ then
 fi
 
 provisioning/bin/install_drupal.sh
-provisioning/bin/workbench_install.sh
 provisioning/bin/multiversion_install.sh
+provisioning/bin/workbench_install.sh
 provisioning/bin/config_update.sh
