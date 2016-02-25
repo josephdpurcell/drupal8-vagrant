@@ -10,8 +10,6 @@
     - { role: composer }
     - { role: apache }
     - { role: php }
-    - { role: phpmyadmin }
     - { role: drush }
-#    - { role: drupal-console }
     - { role: drupal }
     - { role: inputrc }
