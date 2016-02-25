@@ -1,4 +1,9 @@
 ---
+- name: Drupal8 | Install Drupal
+  sudo: yes
+  shell: cd /var/www/dev1.d8.local && provisioning/bin/install.sh --quiet
+  tags: drupal8
+
 - name: Drupal8 | Install Apache vhost
   sudo: yes
   template: src=dev1.d8.local.conf dest=/etc/apache2/sites-available/dev1.d8.local.conf
