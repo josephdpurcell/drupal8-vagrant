@@ -28,9 +28,9 @@ cd ..
 # Link to simpletest
 echo "Linking to simpletest..."
 if [ ! -x /usr/local/bin/install.sh ]
+then
     echo -e '#!/bin/bash\nphp /var/www/dev1.d8.local/web/core/scripts/run-tests.sh $@' | sudo tee /usr/local/bin/run-tests.sh
     sudo chmod +x /usr/local/bin/run-tests.sh
-then
 else
     echo "Symlink already created. Skipping."
 fi
