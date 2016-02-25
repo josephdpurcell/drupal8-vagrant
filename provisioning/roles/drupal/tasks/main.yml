@@ -1,7 +1,7 @@
 ---
 - name: Drupal8 | Install Drupal
   sudo: yes
-  shell: cd /var/www/dev1.d8.local && provisioning/bin/install.sh --quiet
+  shell: /var/www/dev1.d8.local/provisioning/bin/install.sh --quiet
   tags: drupal8
 
 - name: Drupal8 | Set file permissions
