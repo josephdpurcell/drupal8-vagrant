@@ -6,7 +6,7 @@ if [ ! -d "web" ]
 then
     mkdir tmp
     cd tmp
-    composer create-project drupal/drupal dev1.d8.local 8.0.*@dev
+    composer --no-interaction create-project drupal/drupal dev1.d8.local 8.0.*@dev
     cd ..
     mv tmp/dev1.d8.local web
     rm -rf tmp
