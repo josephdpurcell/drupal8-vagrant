@@ -16,7 +16,7 @@
 
 - name: Drupal8 | Install Apache vhost
   sudo: yes
-  template: src=dev1.d8.local.conf dest=/etc/apache2/sites-available/dev1.d8.local.conf
+  template: src=site.local.conf dest=/etc/apache2/sites-available/dev1.d8.local.conf
   tags: drupal8
 
 - name: Drupal8 | Stat dev1.d8.local.conf
