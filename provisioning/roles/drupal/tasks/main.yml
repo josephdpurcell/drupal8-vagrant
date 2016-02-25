@@ -4,14 +4,19 @@
   shell: cd /var/www/dev1.d8.local && provisioning/bin/install.sh --quiet
   tags: drupal8
 
-- name: Drupal8 | Install Apache vhost
+- name: Drupal8 | Set file permissions
   sudo: yes
-  template: src=dev1.d8.local.conf dest=/etc/apache2/sites-available/dev1.d8.local.conf
+  shell: chmod -R 775 /var/www/dev1.d8.local/web/sites/default
   tags: drupal8
 
 - name: Drupal8 | Copy settings.php
   sudo: yes
   template: src=settings.php dest=/var/www/dev1.d8.local/web/sites/default/settings.php
+  tags: drupal8
+
+- name: Drupal8 | Install Apache vhost
+  sudo: yes
+  template: src=dev1.d8.local.conf dest=/etc/apache2/sites-available/dev1.d8.local.conf
   tags: drupal8
 
 - name: Drupal8 | Stat dev1.d8.local.conf
