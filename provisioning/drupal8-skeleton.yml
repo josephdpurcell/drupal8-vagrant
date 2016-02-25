@@ -6,7 +6,6 @@
     system_packages: []
   roles:
     - { role: common }
-    - { role: git }
     - { role: composer }
     - { role: apache }
     - { role: php }
