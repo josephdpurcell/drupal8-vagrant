@@ -9,6 +9,8 @@ end
 env_prefix  = ENV['DRUPAL8_VAGRANT_ENV_PREFIX'] || 'DRUPAL8_VAGRANT'
 ip          = ENV["#{env_prefix}_IP"] || '10.33.60.11'
 project     = ENV["#{env_prefix}_PROJECT"] || 'dev1.d8'
+memory      = "1024"
+cpus        = "1"
 # end tunables
 
 Vagrant.configure(2) do |config|
@@ -22,11 +24,13 @@ Vagrant.configure(2) do |config|
     box.vm.box_version = ">= 1.1.4"
 
     box.vm.provider "vmware_fusion" do |v|
-        v.vmx["memsize"] = "1024"
+        v.vmx["memsize"] = memory
+        v.vmx["numvcpus"] = cpus
     end
 
     box.vm.provider "virtualbox" do |vb|
-        vb.customize ["modifyvm", :id, "--memory", "1024"]
+        vb.memory = memory
+        vb.cpus = cpus
     end
 
     box.vm.hostname = "#{project}.local"
