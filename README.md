@@ -8,13 +8,13 @@ This is a Vagrant configuration for D8 that is meant for development on your loc
 
 To get the vm up and running:
 
-1. git clone git@github.com:josephdpurcell/drupal8-vagrant.git dev1.d8.local
-1. cd dev1.d8.local
-1. vagrant up
-1. vagrant ssh
-1. cd /var/www/dev1.d8.local
-1. ./provisioning/bin/install.sh
-1. Choose "N" for installing multiversiona nd workbench since it's hard coded to user josephdpurcell
+1. `git clone git@github.com:josephdpurcell/drupal8-vagrant.git dev1.d8.local`
+1. `cd dev1.d8.local`
+1. `vagrant up`
+1. `vagrant ssh`
+1. `cd /var/www/dev1.d8.local`
+1. `./provisioning/bin/install.sh`
+1. Choose "N" for installing multiversion and workbench since it's hard coded to user josephdpurcell
 
 You can now visit [http://dev1.d8.local](http://dev1.d8.local).
 
@@ -29,15 +29,15 @@ Password: pass
 
 To create multiple vms (e.g. a dev1.d8.local and a dev2.d8.local):
 
-1. git clone git@github.com:josephdpurcell/drupal8-vagrant.git dev2.d8.local
-1. cd dev2.d8.local
+1. `git clone git@github.com:josephdpurcell/drupal8-vagrant.git dev2.d8.local`
+1. `cd dev2.d8.local`
 1. String replace all "dev1" to "dev2" in this repository.
-1. Modify Vagrant `ip` to 10.33.60.12
-1. vagrant up
-1. vagrant ssh
-1. cd /var/www/dev1.d8.local
-1. ./provisioning/bin/install.sh
-1. Choose "N" for installing multiversiona nd workbench since it's hard coded to user josephdpurcell
+1. Modify Vagrant `ip` to `10.33.60.12`
+1. `vagrant up`
+1. `vagrant ssh`
+1. `cd /var/www/dev1.d8.local`
+1. `./provisioning/bin/install.sh`
+1. Choose "N" for installing multiversion and workbench since it's hard coded to user josephdpurcell
 
 You can now visit [http://dev2.d8.local](http://dev2.d8.local).
 
@@ -47,10 +47,10 @@ Working with modules that do significant changes to database schema can make it 
 
 As such, this repo comes with a script that you can run every time you want to completely re-build Drupal. Essentially, it just does site install, enables the appropriate modules, and sets the admin pass.
 
-1. vagrant ssh
-1. cd /var/www/dev1.d8.local
-1. ./provisioning/bin/install.sh
-1. Choose "N" for installing multiversiona nd workbench since it's hard coded to user josephdpurcell
+1. `vagrant ssh`
+1. `cd /var/www/dev1.d8.local`
+1. `./provisioning/bin/install.sh`
+1. Choose "N" for installing multiversion nd workbench since it's hard coded to user josephdpurcell
 
 ## TODO
 
