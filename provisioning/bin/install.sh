@@ -9,7 +9,7 @@ fi
 
 cd /var/www/dev1.d8.local
 
-provisioning/bin/install_drupal.sh
+provisioning/bin/drupal_install.sh
 if [ ! $SILENT ]
 then
     provisioning/bin/modules_install.sh
