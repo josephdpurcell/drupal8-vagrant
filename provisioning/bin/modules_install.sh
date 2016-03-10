@@ -1,5 +1,7 @@
 #!/bin/bash
 
+INSTALL_MODULE=0
+
 function __install_multiversion() {
     cd web/modules
     echo "Downloading Multiversion."
@@ -11,7 +13,6 @@ function __install_multiversion() {
     fi
     cd ..
     drush en multiversion -y
-    drush en multiversion_ui -y
     cd ..
 }
 
@@ -43,31 +44,30 @@ function __install_workbench_moderation() {
     cd ..
 }
 
+# Sets the INSTALL_MODULE variable from user input.
 function __is_install_desired() {
     local module_name
     local install_module
-    local is_install_desired
 
-    module_name = $1
+    module_name=$1
 
     echo -n "Install $module_name? [Y|n]: "
     read install_module
 
-    if [ -z $install_module ] || [ $install_module == "Y" ] || [ $install_module == "y" ] || [ $install_module == "yes" ]
-        is_install_desired=1
+    if [ -z "$install_module" ] || [ "$install_module" == "Y" ] || [ "$install_module" == "y" ] || [ "$install_module" == "yes" ]
+    then
+        INSTALL_MODULE=1
     else
-        is_install_desired=0
+        INSTALL_MODULE=0
     fi
-
-    return $is_install_desired
 }
 
-INSTALL=`__is_install_desired "multiversion"`
-INSTALL && __install_multiversion
+__is_install_desired "multiversion"
+[ $INSTALL_MODULE -eq 1 ] && __install_multiversion
 
-INSTALL=`__is_install_desired "workspace"`
-INSTALL && __install_workspace
+__is_install_desired "workspace"
+[ $INSTALL_MODULE -eq 1 ] && __install_workspace
 
-INSTALL=`__is_install_desired "workbench_moderation"`
-INSTALL && __install_workbench_moderation
+__is_install_desired "workbench_moderation"
+[ $INSTALL_MODULE -eq 1 ] && __install_workbench_moderation
 
