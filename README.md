@@ -57,3 +57,12 @@ As such, this repo comes with a script that you can run every time you want to c
 1. Add script to upgrade Drupal core
 1. Integrate the composer drupal install to the ansible script (see provisioning/todo.sh)
 1. Make getting multiversion and workbench_moderation modules not dependent on josephdpurcell username
+1. Add xdebug cfg
+
+example xdebug config:
+
+#xdebug.remote_enable=on
+#xdebug.remote_handler=dbgp
+#xdebug.remote_host=10.33.60.1
+#xdebug.remote_port=9000
+#xdebug.remote_autostart=1
