@@ -1,0 +1,16 @@
+---
+- hosts: all
+  vars:
+    timezone: America/Chicago
+    mysql_root_pass: pass
+    aptitude_packages: [git-core, php5, php5-xdebug, mysql-server, apache2]
+    composer_path: /usr/local/bin/composer
+    apache_modules: [rewrite]
+  roles:
+    - { role: inputrc }
+    - { role: aptitude }
+    - { role: php }
+    - { role: apache }
+    - { role: composer }
+#    - { role: drush }
+    - { role: drupal }

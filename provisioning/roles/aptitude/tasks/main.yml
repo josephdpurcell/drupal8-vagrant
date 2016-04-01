@@ -1,0 +1,11 @@
+---
+- name: Update apt cache
+  become: yes
+  apt: update-cache=yes
+  tags: aptitude
+
+- name: Install System Packages
+  become: yes
+  apt: pkg={{ item }} state=installed
+  with_items: "{{ aptitude_packages }}"
+  tags: aptitude

@@ -1,6 +1,6 @@
 ---
 - name: PHP | Adjust php.ini memory_limit
-  sudo: yes
+  become: yes
   lineinfile: dest={{ item }}
               regexp='memory_limit'
               line='memory_limit = {{ php_ini_memory_limit }}'
@@ -10,7 +10,7 @@
   tags: PHP
 
 - name: PHP | Adjust php.ini xdebug
-  sudo: yes
+  become: yes
   lineinfile: dest=/etc/php5/mods-available/xdebug.ini
               regexp='^xdebug\.max_nesting_level'
               line='xdebug.max_nesting_level = {{ php_ini_xdebug_max_nesting_level }}'
