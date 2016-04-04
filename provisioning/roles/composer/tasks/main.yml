@@ -34,3 +34,12 @@
   register: composer_update
   changed_when: "'Updating to version' in composer_update.stdout"
   tags: composer
+
+- name: Update .bashrc
+  lineinfile: dest=/home/vagrant/.bashrc
+              regexp="export PATH=\"$HOME/.composer/vendor/bin:$PATH\""
+              line="export PATH=\"$HOME/.composer/vendor/bin:$PATH\""
+              insertafter=EOF
+              state=present
+  when: not composer_bin.stat.exists
+  tags: composer

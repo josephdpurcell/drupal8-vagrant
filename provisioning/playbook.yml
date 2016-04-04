@@ -12,5 +12,5 @@
     - { role: php }
     - { role: apache }
     - { role: composer }
-#    - { role: drush }
+    - { role: drush }
     - { role: drupal }

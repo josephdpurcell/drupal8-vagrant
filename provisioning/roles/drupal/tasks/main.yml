@@ -6,12 +6,12 @@
 
 - name: Set file permissions
   become: yes
-  shell: chmod -R 775 /var/www/dev1.d8.local/web/sites/default
+  shell: chmod -R 775 /var/www/dev1.d8.local/web/docroot/sites/default
   tags: drupal
 
 - name: Copy settings.php
   become: yes
-  template: src=settings.php dest=/var/www/dev1.d8.local/web/sites/default/settings.php
+  template: src=settings.php dest=/var/www/dev1.d8.local/web/docroot/sites/default/settings.php
   tags: drupal
 
 - name: Install Apache vhost

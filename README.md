@@ -54,6 +54,7 @@ As such, this repo comes with a script that you can run every time you want to c
 
 ## TODO
 
+1. Find a nice solution to web vs web/docroot
 1. Add script to upgrade Drupal core
 1. Integrate the composer drupal install to the ansible script (see provisioning/todo.sh)
 1. Make getting multiversion and workbench_moderation modules not dependent on josephdpurcell username
