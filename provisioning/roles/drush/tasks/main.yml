@@ -5,6 +5,6 @@
   tags: drush
 
 - name: Install drush
-  shell: composer global require --prefer-dist drush/drush
+  shell: composer global require --prefer-dist drush/drush:dev-master
   when: drush_binary.stat.exists == False
   tags: drush
