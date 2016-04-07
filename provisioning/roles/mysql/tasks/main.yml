@@ -1,0 +1,9 @@
+---
+- name: Set MySQL password
+  shell: mysqladmin -u root password {{ mysql_root_pass }}
+  tags: mysql
+
+# @todo is there a way to get around this? drush si fails unless you create it
+- name: Create default db because default is a protected word
+  shell: echo 'create database `default`' | mysql -u root -p{{ mysql_root_pass }}
+  tags: mysql
