@@ -3,7 +3,7 @@
   vars:
     timezone: America/Chicago
     mysql_root_pass: pass
-    aptitude_packages: [git-core, php5, php5-xdebug, php5-mysql, php5-gd, mysql-server, apache2]
+    aptitude_packages: [git-core, php5, php5-xdebug, php5-mysql, php5-gd, php5-curl, mysql-server, apache2]
     composer_path: /usr/local/bin/composer
     apache_modules: [rewrite]
   roles:
