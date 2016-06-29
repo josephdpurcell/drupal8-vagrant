@@ -37,8 +37,8 @@
 
 - name: Update .bashrc
   lineinfile: dest=/home/vagrant/.bashrc
-              regexp="export PATH=\"$HOME/.composer/vendor/bin:$PATH\""
-              line="export PATH=\"$HOME/.composer/vendor/bin:$PATH\""
+              regexp="export PATH=\"$HOME/.config/composer/vendor/bin:$PATH\""
+              line="export PATH=\"$HOME/.config/composer/vendor/bin:$PATH\""
               insertafter=EOF
               state=present
   when: not composer_bin.stat.exists
