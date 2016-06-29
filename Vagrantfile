@@ -1,13 +1,8 @@
-unless Vagrant.has_plugin?("vagrant-hostmanager")
-    raise "vagrant-hostmanager plugin is not installed"
-end
-
-# tunables
+# Modify these configurations:
 ip          = '10.33.60.11'
 project     = 'dev1.d8'
 memory      = '1024'
 cpus        = '1'
-# end tunables
 
 Vagrant.configure(2) do |config|
 
