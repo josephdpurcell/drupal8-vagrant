@@ -13,7 +13,7 @@ Vagrant.configure(2) do |config|
 
     config.vm.define "#{project}" do |box|
 
-        box.vm.box = "ubuntu/xenial64"
+        box.vm.box = "ubuntu/trusty64"
 
         box.vm.provider "vmware_fusion" do |v|
             v.vmx["memsize"] = memory
