@@ -46,8 +46,10 @@ You can now visit [http://dev2.d8.local](http://dev2.d8.local).
 
 example xdebug config:
 
+```
 #xdebug.remote_enable=on
 #xdebug.remote_handler=dbgp
 #xdebug.remote_host=10.33.60.1
 #xdebug.remote_port=9000
 #xdebug.remote_autostart=1
+```
