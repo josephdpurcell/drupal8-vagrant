@@ -27,6 +27,8 @@ Vagrant.configure(2) do |config|
 
         box.vm.hostname = "#{project}.local"
         box.vm.network :private_network, ip: ip
+        box.vm.network "forwarded_port", guest: 3306, host: 3306
+        box.vm.network "forwarded_port", guest: 1701, host: 1701
 
         box.vm.synced_folder ".", "/vagrant", :disabled => true
         box.vm.synced_folder ".", "/var/www/#{project}.local", :nfs => true, :mount_options => ['vers=3']
