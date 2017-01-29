@@ -1,7 +1,7 @@
 # Modify these configurations:
 ip          = '10.33.60.13'
 project     = 'dev'
-memory      = '2048'
+memory      = '4096'
 cpus        = '2'
 
 Vagrant.configure(2) do |config|
