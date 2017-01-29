@@ -6,9 +6,9 @@ if [ ! -d "web" ]
 then
     mkdir tmp
     cd tmp
-    composer --no-interaction create-project drupal/drupal dev1.d8.local 8.0.*@dev
+    composer --no-interaction create-project drupal/drupal test.local 8.0.*@dev
     cd ..
-    mv tmp/dev1.d8.local web
+    mv tmp/test.local web
     rm -rf tmp
 else
     echo "A Drupal project already exists. Skipping."
@@ -29,7 +29,7 @@ cd ..
 echo "Linking to simpletest..."
 if [ ! -x /usr/local/bin/install.sh ]
 then
-    echo -e '#!/bin/bash\nphp /var/www/dev1.d8.local/web/core/scripts/run-tests.sh $@' | sudo tee /usr/local/bin/run-tests.sh
+    echo -e '#!/bin/bash\nphp /var/www/test.local/web/core/scripts/run-tests.sh $@' | sudo tee /usr/local/bin/run-tests.sh
     sudo chmod +x /usr/local/bin/run-tests.sh
 else
     echo "Symlink already created. Skipping."
