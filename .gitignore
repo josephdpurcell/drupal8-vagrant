@@ -1,6 +1,7 @@
 # Vagrant
 .vagrant/
 web
+web2
 provisioning/playbook.retry
 sites
 backups
