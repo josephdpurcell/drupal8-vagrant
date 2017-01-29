@@ -2,32 +2,32 @@
 # @todo get this working:
 #- name: Install Drupal
 #  become: yes
-#  shell: /var/www/dev1.d8.local/provisioning/bin/install.sh --quiet
+#  shell: /var/www/sites.local/provisioning/bin/install.sh --quiet
 #  tags: drupal
 #
 #- name: Set file permissions
 #  become: yes
-#  shell: chmod -R 775 /var/www/dev1.d8.local/web/docroot/sites/default
+#  shell: chmod -R 775 /var/www/sites.local/web/docroot/sites/default
 #  tags: drupal
 #
 #- name: Copy settings.php
 #  become: yes
-#  template: src=settings.php dest=/var/www/dev1.d8.local/web/docroot/sites/default/settings.php
+#  template: src=settings.php dest=/var/www/sites.local/web/docroot/sites/default/settings.php
 #  tags: drupal
 #
 - name: Install Apache vhost
   become: yes
-  template: src=site.local.conf dest=/etc/apache2/sites-available/dev1.d8.local.conf
+  template: src=site.local.conf dest=/etc/apache2/sites-available/sites.local.conf
   tags: drupal
 
-- name: Stat dev1.d8.local.conf
-  stat: path=/etc/apache2/sites-enabled/dev1.d8.local.conf
+- name: Stat sites.local.conf
+  stat: path=/etc/apache2/sites-enabled/sites.local.conf
   register: drupal_vhost_exists
   tags: drupal
 
 - name: Enable drupal vhost
   become: yes
-  shell: /usr/sbin/a2ensite dev1.d8.local
+  shell: /usr/sbin/a2ensite sites.local
   when: drupal_vhost_exists.stat.exists == False
   tags: drupal
 
