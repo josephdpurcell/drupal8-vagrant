@@ -9,6 +9,7 @@
   roles:
     - { role: inputrc }
     - { role: aptitude }
+    - { role: mysql }
     - { role: php }
     - { role: apache }
     - { role: composer }
