@@ -1,6 +1,6 @@
 # Modify these configurations:
 ip          = '10.33.60.13'
-project     = 'sites2'
+project     = 'dev'
 memory      = '2048'
 cpus        = '2'
 

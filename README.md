@@ -8,13 +8,13 @@ This is a Vagrant configuration for D8 that is meant for development on your loc
 
 To get the vm up and running:
 
-1. `git clone git@github.com:josephdpurcell/drupal8-vagrant.git sites2.local`
-1. `cd sites2.local`
+1. `git clone git@github.com:josephdpurcell/drupal8-vagrant.git dev.local`
+1. `cd dev.local`
 1. `vagrant up`
 1. `vagrant ssh`
-1. `cd /var/www/sites2.local`
+1. `cd /var/www/dev.local`
 
-You can now visit [http://sites2.local](http://sites2.local).
+You can now visit [http://dev.local](http://dev.local).
 
 Admin credentials:
 
@@ -25,7 +25,7 @@ Password: pass
 
 ## Multiple VMs
 
-To create multiple vms (e.g. a sites2.local and a dev2.d8.local):
+To create multiple vms (e.g. a dev.local and a dev2.d8.local):
 
 1. `git clone git@github.com:josephdpurcell/drupal8-vagrant.git dev2.d8.local`
 1. `cd dev2.d8.local`
@@ -33,7 +33,7 @@ To create multiple vms (e.g. a sites2.local and a dev2.d8.local):
 1. Modify Vagrant `ip` to `10.33.60.12`
 1. `vagrant up`
 1. `vagrant ssh`
-1. `cd /var/www/sites2.local`
+1. `cd /var/www/dev.local`
 
 You can now visit [http://dev2.d8.local](http://dev2.d8.local).
 

@@ -7,6 +7,6 @@ then
     echo "Entering quiet mode. No user interaction will take place."
 fi
 
-#cd /var/www/sites2.local
+#cd /var/www/dev.local
 
 #provisioning/bin/drupal_install.sh
