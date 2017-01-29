@@ -8,7 +8,7 @@
 - name: Enable Modules
   become: yes
   command: /usr/sbin/a2enmod {{ item }}
-  with_items: apache_modules
+  with_items: "{{ apache_modules }}"
   tags: apache
 
 - name: Stat 000-default.conf
