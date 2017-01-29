@@ -5,7 +5,7 @@
     mysql_root_pass: pass
     aptitude_packages: [git-core, php5, php5-xdebug, php5-mysql, php5-gd, php5-curl, mysql-server, apache2]
     composer_path: /usr/local/bin/composer
-    apache_modules: [rewrite]
+    apache_modules: [rewrite, ssl]
   roles:
     - { role: inputrc }
     - { role: aptitude }
